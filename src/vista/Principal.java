@@ -24,6 +24,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.awt.Color;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class Principal extends JFrame {
 
@@ -45,6 +48,7 @@ public class Principal extends JFrame {
 	}
 
 	public Principal() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/imagenes/mugiwara-logo.png")));
 		initcomponents();
 	}
 	
@@ -98,32 +102,33 @@ public class Principal extends JFrame {
 	//codigo de todos los componentes que se muestran en pantalla
 	private void initcomponents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 373);
+		setBounds(100, 100, 703, 421);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Iniciar Sesion");
-		lblNewLabel.setBounds(5, 5, 424, 23);
+		lblNewLabel.setBounds(10, 11, 178, 31);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 17));
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
 		contentPane.add(lblNewLabel);
 		
 		txtUsuario = new JTextField();
 		txtUsuario.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtUsuario.setBounds(132, 87, 173, 38);
+		txtUsuario.setBounds(10, 111, 173, 38);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nombre de usuario");
 		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1.setBounds(132, 60, 119, 14);
+		lblNewLabel_1.setBounds(10, 77, 119, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Contrase\u00F1a");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_2.setBounds(132, 147, 119, 14);
+		lblNewLabel_2.setBounds(10, 170, 119, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnIniciarSesion = new JButton("Iniciar sesion");
@@ -133,7 +138,7 @@ public class Principal extends JFrame {
 			}
 		});
 		btnIniciarSesion.setFont(new Font("Dialog", Font.BOLD, 12));
-		btnIniciarSesion.setBounds(132, 221, 173, 38);
+		btnIniciarSesion.setBounds(10, 257, 173, 38);
 		contentPane.add(btnIniciarSesion);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
@@ -143,12 +148,21 @@ public class Principal extends JFrame {
 				registrarse();
 			}
 		});
-		btnRegistrarse.setBounds(132, 270, 173, 38);
+		btnRegistrarse.setBounds(10, 306, 173, 38);
 		contentPane.add(btnRegistrarse);
 		
 		txtContraseña = new JPasswordField();
 		txtContraseña.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtContraseña.setBounds(132, 172, 173, 38);
+		txtContraseña.setBounds(10, 196, 173, 38);
 		contentPane.add(txtContraseña);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(51, 51, 51));
+		panel.setBounds(231, 0, 456, 382);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(Principal.class.getResource("/imagenes/569ceaf28defb915e5ff6c53cc7665aa.png")));
+		panel.add(lblNewLabel_3);
 	}
 }
